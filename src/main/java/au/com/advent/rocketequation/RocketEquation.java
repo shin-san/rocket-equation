@@ -14,7 +14,7 @@ public class RocketEquation {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(RocketEquation.class);
 
-	private static List<Integer> moduleList = new ArrayList<Integer>();
+	private static List<Integer> moduleList = new ArrayList<>();
 
 	private static int totalFuel = 0;
 	private static int entireFuel = 0;
@@ -26,7 +26,6 @@ public class RocketEquation {
 
 		LOGGER.info("Total fuel of all modules: {}\n", calculateTotalFuelModule());
 
-		totalFuelForModule = 0;
 		LOGGER.info("Total fuel of modules including total fuel requirement: {}", calculateEntireFuel());
 	}
 
@@ -56,7 +55,7 @@ public class RocketEquation {
 		while(iterator.hasNext()) {
 			int mass = iterator.next();
 			totalFuel += measureFuel(mass);
-			LOGGER.debug("Total fuel requirement for the module ({}) : {}", mass, totalFuel);
+			LOGGER.debug("Total fuel for the module ({}) : {}", mass, totalFuel);
 		}
 
 		return totalFuel;
@@ -86,7 +85,7 @@ public class RocketEquation {
 		}
 
 		totalFuelForModule += moduleFuel;
-//		LOGGER.info("Fuel for the module ({}) : {}", nextTotalModuleFuel, measureFuel(nextTotalModuleFuel));
+		LOGGER.debug("Fuel for the module ({}) : {}", nextTotalModuleFuel, measureFuel(nextTotalModuleFuel));
 
 		return (calculateTotalFuelRequirement(moduleFuel));
 	}
