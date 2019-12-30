@@ -43,7 +43,7 @@ public class RocketEquation {
 				moduleList.add(Integer.parseInt(br.readLine()));
 			}
 		} catch (Exception ex) {
-			LOGGER.error("Exception occurred: {}", ex);
+			LOGGER.error("Exception occurred: {0}", ex);
 			throw new RuntimeException("Exception occurred");
 		}
 	}
